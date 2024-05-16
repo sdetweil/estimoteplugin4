@@ -14,6 +14,11 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`createManager()`](#createmanager)
+* [`startScanning(...)`](#startscanning)
+* [`stopScanning(...)`](#stopscanning)
+* [`connect(...)`](#connect)
+* [`disconnect(...)`](#disconnect)
 
 </docgen-index>
 
@@ -23,15 +28,91 @@ npx cap sync
 ### echo(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+echo(options: { value: string; }) => Promise<{ handle: string; }>
 ```
 
 | Param         | Type                            |
 | ------------- | ------------------------------- |
 | **`options`** | <code>{ value: string; }</code> |
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+**Returns:** <code>Promise&lt;{ handle: string; }&gt;</code>
+
+--------------------
+
+
+### createManager()
+
+```typescript
+createManager() => Promise<any>
+```
+
+**Returns:** <code>Promise&lt;any&gt;</code>
+
+--------------------
+
+
+### startScanning(...)
+
+```typescript
+startScanning(handle: string, autoConnect: boolean, ids: string) => Promise<any>
+```
+
+| Param             | Type                 |
+| ----------------- | -------------------- |
+| **`handle`**      | <code>string</code>  |
+| **`autoConnect`** | <code>boolean</code> |
+| **`ids`**         | <code>string</code>  |
+
+**Returns:** <code>Promise&lt;any&gt;</code>
+
+--------------------
+
+
+### stopScanning(...)
+
+```typescript
+stopScanning(handle: string) => Promise<any>
+```
+
+| Param        | Type                |
+| ------------ | ------------------- |
+| **`handle`** | <code>string</code> |
+
+**Returns:** <code>Promise&lt;any&gt;</code>
+
+--------------------
+
+
+### connect(...)
+
+```typescript
+connect(handle: string, beacon: string) => Promise<any>
+```
+
+| Param        | Type                |
+| ------------ | ------------------- |
+| **`handle`** | <code>string</code> |
+| **`beacon`** | <code>string</code> |
+
+**Returns:** <code>Promise&lt;any&gt;</code>
+
+--------------------
+
+
+### disconnect(...)
+
+```typescript
+disconnect(handle: string, beacon: string) => Promise<any>
+```
+
+| Param        | Type                |
+| ------------ | ------------------- |
+| **`handle`** | <code>string</code> |
+| **`beacon`** | <code>string</code> |
+
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
 </docgen-api>
+# estimoteplugin4
