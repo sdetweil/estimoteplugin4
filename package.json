@@ -1,6 +1,6 @@
 {
   "name": "estimoteplugin4",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "dfsdfdsf",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,8 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "Estimoteplugin4.podspec"
+    "Estimoteplugin4.podspec",
+    "ios/EstimoteUWB.xcframework/"
   ],
   "author": "ssm d",
   "license": "MIT",
