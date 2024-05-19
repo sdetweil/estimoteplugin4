@@ -3,7 +3,7 @@
 
 // Define the plugin using the CAP_PLUGIN Macro, and
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
-CAP_PLUGIN(sduwbPlugin, "sduwb",
+CAP_PLUGIN(EstimotePlugin, "EstimotePlugin",
            CAP_PLUGIN_METHOD(createManager, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(startScanning, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(stopScanning, CAPPluginReturnPromise);     

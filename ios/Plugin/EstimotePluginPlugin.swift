@@ -6,8 +6,8 @@ import EstimoteUWB
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitorjs.com/docs/plugins/ios
  */
-@objc(sduwbPlugin)
-public class sduwbPlugin: CAPPlugin {
+@objc(EstimotePlugin)
+public class EstimotePlugin: CAPPlugin {
     //private let implementation = sduwb()
     //let uwb = sduwb()
     var ListenerKey: String = "UWBInfo"
@@ -78,7 +78,7 @@ public class sduwbPlugin: CAPPlugin {
         call.resolve()
     }    
 }
-extension sduwbPlugin:UWBPositioningObserver {
+extension EstimotePlugin:UWBPositioningObserver {
     public func didUpdatePosition(for device: UWBDevice) {
        // print("position updated for device: \(String(describing: device.vector)) \(device.distance)") 
        // dump("position \(getMS()) \(counter) device= \(device)")
@@ -96,7 +96,7 @@ extension sduwbPlugin:UWBPositioningObserver {
     }
 }
 // OPTIONAL PROTOCOL FOR BEACON BLE RANGING
-extension sduwbPlugin: BeaconRangingObserver {
+extension EstimotePlugin: BeaconRangingObserver {
     public func didRange(for beacon: BLEDevice) {
         print("beacon did range: \(beacon)")
           notifyListeners(ListenerKey, data: ["counter":"\(counter)","type": "range","device":beacon.publicId, "distance":beacon.rssi ])
@@ -105,7 +105,7 @@ extension sduwbPlugin: BeaconRangingObserver {
 }
 
 // OPTIONAL PROTOCOL FOR DISCOVERY AND CONNECTIVITY CONTROL
-extension sduwbPlugin: UWBDiscoveryObserver {
+extension EstimotePlugin: UWBDiscoveryObserver {
     public var shouldConnectAutomatically: Bool {
         return shouldConnect; // set this to false if you want to manage when and what devices to connect to for positioning updates
     }
