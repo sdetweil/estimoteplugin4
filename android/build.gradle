@@ -64,6 +64,7 @@ dependencies {
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation 'androidx.core:core-ktx:1.13.1'
+    implementation("androidx.core.uwb:uwb:1.0.0-alpha08")
     implementation "com.estimote:uwb-sdk:1.0.0-rc5"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"

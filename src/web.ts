@@ -1,6 +1,8 @@
 import { WebPlugin } from '@capacitor/core';
 
 import type { EstimotePluginPlugin } from './definitions';
+import { PermissionStatus } from './definitions';
+
 
 export class EstimotePluginWeb
   extends WebPlugin
@@ -31,5 +33,14 @@ export class EstimotePluginWeb
     return handle+beacon
 
   };
+  async checkPermissions(): Promise < PermissionStatus > {
+    // TODO
+    throw this.unimplemented('Not implemented on web.');
+  }
+
+  async requestPermissions(): Promise < PermissionStatus > {
+    // TODO
+    throw this.unimplemented('Not implemented on web.');
+  }
 }
 

@@ -19,6 +19,10 @@ npx cap sync
 * [`stopScanning(...)`](#stopscanning)
 * [`connect(...)`](#connect)
 * [`disconnect(...)`](#disconnect)
+* [`checkPermissions()`](#checkpermissions)
+* [`requestPermissions()`](#requestpermissions)
+* [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -113,6 +117,46 @@ disconnect(handle: string, beacon: string) => Promise<any>
 **Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
+
+
+### checkPermissions()
+
+```typescript
+checkPermissions() => Promise<PermissionStatus>
+```
+
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
+
+--------------------
+
+
+### requestPermissions()
+
+```typescript
+requestPermissions() => Promise<PermissionStatus>
+```
+
+**Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### PermissionStatus
+
+| Prop          | Type                                                        |
+| ------------- | ----------------------------------------------------------- |
+| **`beacons`** | <code><a href="#permissionstate">PermissionState</a></code> |
+
+
+### Type Aliases
+
+
+#### PermissionState
+
+<code>'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'</code>
 
 </docgen-api>
 # estimoteplugin4
