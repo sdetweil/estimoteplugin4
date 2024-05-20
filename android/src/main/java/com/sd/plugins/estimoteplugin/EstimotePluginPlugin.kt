@@ -53,14 +53,7 @@ class EstimotePluginPlugin : Plugin() {
     private final fun permissionGranted():Boolean {
         return (getPermissionState(BEACONS) == PermissionState.GRANTED)
     }
-    @PluginMethod
-    fun echo(call: PluginCall) {
-        val value = call.getString("value")
-        Log.i("estimotePlugin", "input value=${value}")
-        val ret = JSObject()
-        ret.put("handle", value)
-        call.resolve(ret)
-    }
+
     @PermissionCallback
     fun BeaconsPermissionsCallback(call: PluginCall) {
         Log.i("estimoteplugin", "BeaconsPermissionsCallback entered")
@@ -227,6 +220,7 @@ class EstimotePluginPlugin : Plugin() {
                                         Log.i("UWB","sending event info")
                                         notifyListeners("UWBInfo", data)
                                         // if we should connect on discovery
+                                        Log.i("UWB","should Connect="+shouldConnectOnDiscovery)
                                         if (shouldConnectOnDiscovery == true) {
                                             // do it
                                             beacon.device?.let {
@@ -262,7 +256,7 @@ class EstimotePluginPlugin : Plugin() {
                             val data = JSObject()
                             Log.i(
                                 "estimoteplugin",
-                                "UWB ${rangingResult.position.distance?.value.toString()}"
+                                "UWB distance ${rangingResult.position.distance?.value.toString()}"
                             )
 
                             if (rangingResult.position.azimuth !== null) {

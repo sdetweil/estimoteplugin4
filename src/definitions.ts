@@ -7,7 +7,7 @@ export interface PermissionStatus {
 }
 
 export interface EstimotePluginPlugin extends Plugin { 
-  echo(options: { value: string }): Promise<{ handle: string }>;
+//  echo(options: { value: string }): Promise<{ handle: string }>;
   createManager(): Promise<any>;
   startScanning(handle: string, autoConnect: boolean, ids: string): Promise<any>;
   stopScanning(handle: string): Promise<any>;
